@@ -7,12 +7,11 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 import br.edu.ifsp.arq.sice.config.WebConfig;
 
-
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
+	//nao está sendo utilizada no momento
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -27,13 +26,13 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
 	}
 	
 	//configuração de caracteres
-		@Override
-		protected Filter[] getServletFilters() {
-			CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
-			characterEncodingFilter.setEncoding("UTF-8");
-			characterEncodingFilter.setForceEncoding(true);
-			
-			return new Filter[] { characterEncodingFilter };
-		}
+	@Override
+	protected Filter[] getServletFilters() {
+		CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+		characterEncodingFilter.setEncoding("UTF-8");
+		characterEncodingFilter.setForceEncoding(true);
+		
+		return new Filter[] { characterEncodingFilter };
+	}
 
 }
